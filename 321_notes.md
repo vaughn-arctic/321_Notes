@@ -1,8 +1,11 @@
-# 24 Jan
+
 
 ##### [Cache Design](https://github.com/vaughn-arctic/321_Notes/edit/main/321_notes.md#cache-design)
 ##### [I/O Techniques](https://github.com/vaughn-arctic/321_Notes/edit/main/321_notes.md#io-techniques-direct-memory-access)
+##### [Lab 1 Q/As](https://github.com/vaughn-arctic/321_Notes/edit/main/321_notes.md#lab-1)
 
+
+# 24 JAN
 >Cognative  -----     Affectibe  -----   PSYCHOMOTOR!!!!<br />
 >  L1 ------------- L1--------------              L1     (Basic Learning)<br>
 >  L2.... (Comprehension)<br>
@@ -64,4 +67,32 @@ QUESTIONS
 2. Processor Main Mem, I/O module, System bus
 3. instruction steps = fetch and request
 
+
+
+### LAB 1 
+> 1. Concerning the memory hierarchy, there is a trade-off among the three key characteristics: capacity, access time, and cost. What is the relationship between these three?
+>They share a direct relationship, memory must be able to keep pace with access times while still remaining cost efficient
+>
+>2. What happens if a computer system only contains registers and main memory, but no cache? Justify your answer
+>
+>You really would not be able to execute anything as there would be nowhere to store the temporary data of the sub processes that comprise each large process. 
+>The cache is what stages the transfer of data between the registers and main memory
+>
+>
+>3. The replacement algorithm chooses (within the constraints of the mapping function) which block to replace when a new block is to be loaded into the cache and the cache already has all slots filled with other blocks. Suggest a strategy that has at least one advantage over the least-recently-used (LRU) algorithm. Justify your answer
+>
+>FIFO (First in First Out) While similar to the least recently used, this method would automatically remove older referenced blocks sequentially, removing the need for the hardware mechanisms required to identify LRU blocks
+>
+>4. Practice Problem:
+>
+>A computer has a cache, main memory, and a disk used for virtual Memory
+>An access to the cache takes 10 ns
+>An access to main memory takes 100 ns
+>An access to the disk takes 10,000 ns
+>Suppose the cache hit ratio is 0.9 and the main memory hit ratio is 0.8.
+>What is the effective access time (EAT) in ns required to access a referenced word on this system?
+>
+>Cache time( hit rate)  + cache error rate(cache time + m/m time) + M/M error rate (cache time + M/M time + disk time) 
+>
+>10(0.9) + 0.1(10+100) + 0.2(10000+100+10) = 2042 ns 
 
