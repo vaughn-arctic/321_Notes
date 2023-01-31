@@ -3,6 +3,8 @@
 ##### [Cache Design](https://github.com/vaughn-arctic/321_Notes/edit/main/321_notes.md#cache-design)
 ##### [I/O Techniques](https://github.com/vaughn-arctic/321_Notes/edit/main/321_notes.md#io-techniques-direct-memory-access)
 ##### [Lab 1 Q/As](https://github.com/vaughn-arctic/321_Notes/edit/main/321_notes.md#lab-1)
+##### [OS Objectives](https://github.com/vaughn-arctic/321_Notes/edit/main/321_notes.md#operating-systems-objectives-and-functions)
+
 
 
 # 24 JAN
@@ -95,4 +97,116 @@ QUESTIONS
 >Cache time( hit rate)  + cache error rate(cache time + m/m time) + M/M error rate (cache time + M/M time + disk time) 
 >
 >10(0.9) + 0.1(10+100) + 0.2(10000+100+10) = 2042 ns 
+
+
+# Jan 31
+
+##### Lab 1 answers
+>!. Faster access time, greater cost per bit, 
+Greater capacity, smaller cost per bit, 
+Greater capacity, slower access speed<br>
+>2. That is because the processor will be waiting every time it wants to access the main memory as it is slower than the processor.<br>
+>3... Correct <br>
+>4. EAT = 0.9 (10) + 0.1 [ 0.8 (10 + 100) + 0.2 (10 + 100 + 10000) ]<br>
+> ............         success     fail [ success() + fail() ] <br>
+> OR EAT = 10 + 0.1 (100) + 0.02 (10000) = 220ns<br>
+> .......baseline + chance of failure (time cost) <br>
+
+###practice 0.9(10) + .1( 0.85( 10 + 50) + 0.15 ( 0.8 ( 10 + 50 + 100) + 0.2 ( 10 + 50 + 100 +10000 ) ) ) ) 
+
+update group project [here](https://docs.google.com/spreadsheets/d/1wK4asShsy8apOGWDbOScW8pcrbp3Z7oG4v_p8f99yYk/edit?usp=sharing)
+
+### Operating Systems Objectives and Functions
+- program the controls execution
+- interface between application and hardware
+-  convenience, efficiency, ability to evolve (scalability) 
+
+Provided services
+1. program development
+2. program execution 
+3. access i/o devices
+4. file/system access
+5. error detection
+
+<img width="749" alt="image" src="https://user-images.githubusercontent.com/70354960/215863741-5ca28cdc-f73c-4c40-92c0-5a293630447e.png">
+
+#### Key interfaces
+API - sharing data at the user
+>defines access in source code at high level
+
+ABI - Binary - 
+>defines how data structures are accessed at low level 
+
+ISA - Instruction set architecture
+
+#### Resource  management
+>Takes place in main memory. Includes the kernel and other portions of the OS. Responsible for controlling computer's resources: I/O, memory, process execution
+
+### Evolution of OS
+- Hardware upgrades
+- New types of hardware
+- new services
+- Fixes
+
+test | table
+-- | -- 
+fuck | me
+
+four stages
+1. Serial Procssing
+  - no poerating systmes... direct infterface with hardware
+  - physical queue in to conduct processes
+  - do one task then the next
+2. simple bash systems
+  - maximize processer utilization
+  - uses a monitor (software for scheduling jobs) 
+  - submits instructions to computer operator who batches jobs sequentially
+    - operator submits entire batch (of jobs) on input device to monitor
+  - Each program is constructed to branch back to the monitor when it completes processing
+    - at this point monitor begins next program
+  - results of each job sent to output device
+  - User mode
+    - user program exucutes in user mode
+    - certain areas of memory are protected from user access
+    - certain instructions may not be executured
+  - Kernel mode (main kernel)
+    - Privlidge instructions
+    - essentially sysadmin
+3. Multiprogrammed Batch Systems
+  - Processor often idle in simple batch
+    - sequentional instructions cause lot of idle time in between jobs
+  - Allow processor to be switch between the various programs/jobs in its memory while waiting for another program
+  - Still only runs 1 process at a time 
+  - ![image align = "center"](https://user-images.githubusercontent.com/70354960/215867217-74ad2962-fcd9-4c86-9c00-b191d04d58ec.png)
+4. Time sharing systems
+  - Multiprograming can be used to handle multiple interactive jobs, "Time Sharing" processor time is shared among users
+  - Multiple users simultaneously access the system through terminals, the OS interleaving the execution of each user program in short bursts
+  - Time Slicing
+    - Clock interuppts at intervals, the OS regains control and can assign the process to another user
+    - Thus at regular time intervals, the current user would be blocked and another user loaded in
+    - <img width="850" alt="image" align = "center" src="https://user-images.githubusercontent.com/70354960/215868338-0d5a573c-0060-4631-a14b-f21942daf202.png">
+
+### Major Achievements
++ Processes
+  + Another word for job
+  + > a program in execution, instance of a program running on a computer
+  + entitiy can be assigned to and executed on a processor
+  + unit of activity - a sequential thread of execution, current state or associated set of system resources (Ram allocation, hardware uses, etc.) 
++ Process Components
+  + executable program, associated data needed by the program, execution context of the program
+  + "Context" includes all info the OS needs to manage and execute the process (priority, waiting for I/O even) 
+  + <img width="371" alt="image" align="center" src="https://user-images.githubusercontent.com/70354960/215869584-98020525-dba4-46d3-a33e-2f79e9cd8562.png">
++ Memory management
+  + proces isolation
+  + automatic allocation and management
+  + suport of modular programming 
+  + Protection/Access control
+  + Long term storage
+  + >Typically OS meet these requirments with birtual memomry and file system facilities
++ information protection and security
++ scheduling resource management
+
+
+
+
 
