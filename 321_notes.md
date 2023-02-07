@@ -4,7 +4,7 @@
 ##### [I/O Techniques](https://github.com/vaughn-arctic/321_Notes/edit/main/321_notes.md#io-techniques-direct-memory-access)
 ##### [Lab 1 Q/As](https://github.com/vaughn-arctic/321_Notes/edit/main/321_notes.md#lab-1)
 ##### [OS Objectives](https://github.com/vaughn-arctic/321_Notes/edit/main/321_notes.md#operating-systems-objectives-and-functions)
-
+##### [Process Description and control](https://github.com/vaughn-arctic/321_Notes/edit/main/321_notes.md#process-description-and-control)
 
 
 # 24 JAN
@@ -206,7 +206,101 @@ four stages
 + information protection and security
 + scheduling resource management
 
+# Feb 7 
+
+### Process description and control
+
+#### what is a process
+- progam in execution 
+- instance of program running on a computer
+- entity can be assigned and executed on a processor
+- unit of activity
+  - current state
+  
+>The OS must interleave the execution of multiple processess, to maximize processor utilization while providing reasonable response time
+
+> The OS must allocate resources to processes in accordance with a specific policy while at the same time avoiding deadlock
+>  - policy is user defined
+
+#### essential elements of a process
+- codes
+- data
+- process control block (PCB)
+  - created by the OS
+  - used to track execution status
+  - key to that allows support for multiprogramming, timesharing etcs
+
+#### Looking at Process Control Block (PCB) 
+
+- identifier
+  - a unique ID
+- state
+  - running state, waiting state, termingating, etc.... 
+- priority
+  - importance level in order of processing 
+- program counter
+  - points to the address of the next instruction to be executed
+- mem pointer
+  - points to code and data associated with the process
+- context data
+  - data present in the regesiters in the processor while executing 
+- I/O status info
+  - oustatning I/O requests, I/O devices (disk drives) 
+- accounting info
+  - may include processor time and clock time used
+
+> it is possible to nitterupt a process and resume execuition later
+> The process control block is the keel tool that enables OS to support multiprogramming and to provide for multiprocessing
+
+#### process states
+
+1. Two state process model 
+  - process the control block between running - not running
+  - The que is a FIFO list, 
+    - each process in the que is given a certain amount of time in turn to execute, then returns to the end of the queue
+2. 5-state process model 
+  * running
+    - process currently being exectuire
+  * ready
+    - process prepared to execute when given the oppurtuntiy
+  * blocked/waiting
+    - cannot execute until some even occurs
+  * new
+    - just been created and not addmitted to the executable pool 
+  * exit
+    - released from the executable pool
+<br>
+
+#### Process description
+
+Fundamentally we can think of the OS as the -> entity that manages the use of system resousreces by process
+
+#### OS INfotrmation
+- constructions and maintains info about each entity it manages
+- 4 types 
+  - memoery
+    - used to keep track of main and virtual memory
+    - processes are mainted on the virtual memomry or simple swapping mechanismw
+  - i/o devices
+    - used by OS to mangage I?O devices
+    - at any time I/O devices may be aailabe or assigned to a particular processesw 
+    - needs to know status of I/O
+  - file
+    - existence and location of files
+    - current states
+  - process 
+    - process location : need for suffiecent memory on the stack
+    - process attributes
 
 
+#### Process Control Structures
+> collection of program, data, stack, and attriburs is called the proccess image
+
+The process image<br>
+- a great deal of info about each process
+- each process is assigned a uniquq ID
+- process statw inforamtion
+- process controll information 
 
 
+# COMMMITT YOUR CHANGES !!!!!
