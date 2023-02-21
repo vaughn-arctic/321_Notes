@@ -316,3 +316,26 @@ The process image<br>
 ###
 Notes for these are in lab tutorial <br>
 code is in the ubuntu multipass home directory
+``` C
+        
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/types.h>
+    
+
+int main() {
+
+        pid_t new_pid; 
+        new_pid = fork(); 
+        new_pid = fork(); 
+        new_pid = fork(); 
+
+        printf("forked\n"); 
+
+        sleep(5); 
+        return 0; 
+
+}; 
+
+```
+
