@@ -302,5 +302,17 @@ The process image<br>
 - process statw inforamtion
 - process controll information 
 
+#### Linux Process ID
+> each process in linux is has a unique id -> PID <br>
+> arranged as a tree where parent processes are ppid<br>
+> getpid() getppid() = systemcalls
+>   - these need headers to operatio
+>   - #include<stdio.h>
+> 
+
 
 # COMMMITT YOUR CHANGES !!!!!
+# FEB 21
+###
+Notes for these are in lab tutorial <br>
+code is in the ubuntu multipass home directory
